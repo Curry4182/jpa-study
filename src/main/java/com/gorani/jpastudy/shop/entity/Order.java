@@ -1,18 +1,21 @@
 package com.gorani.jpastudy.shop.entity;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.EnumType;
-import jakarta.persistence.Enumerated;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
+import lombok.Getter;
 
 import java.time.LocalDateTime;
 
 @Entity
+@Table(name = "orders")
+@Getter
 public class Order {
 
     @Id
+    @GeneratedValue
+    @Column(name = "ORDER_ID")
     private Long id;
 
+    @Column(name = "MEMBER_ID")
     private Long memberId;
 
     private LocalDateTime orderDate;
